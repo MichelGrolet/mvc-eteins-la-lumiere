@@ -62,4 +62,25 @@ public class Terrain extends Observable{
     public void plusNbClic(){
         this.nbClic++;
     }
+
+    /**
+    * Permet de changer l'etat d'une lampe du tableau
+    * en fonction des coordonnees fournies
+    * @param x coordonnees x de la lampe a changer
+    * @param y coordonnees y de la lampe a changer
+    */
+    public void changeLampe(int x,int y){
+        //On boucle jusqu'a trouver la bonne lampe
+        boolean trouve=false;
+        int i=0;
+        while(!trouve){
+            //Si les coordonnees fournies sont comprises dans la lampe, on change on etat
+            if(this.lampes[i].getX()>x && this.lampes[i].getY()>y && this.lampes[i].getX()<=x+Lampe.TAILLE 
+            && this.lampes[i].getY()<=y+Lampe.TAILLE){
+                this.lampes[i].changerLampe();
+                trouve=true;
+            }
+            i++;
+        }
+    }
 }
