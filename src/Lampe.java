@@ -38,5 +38,15 @@ public class Lampe{
         this.estAllume=false;
     }
 
-    
+    /**
+    * Permet de changer l'etat d'un lampe (allume/eteinte)
+    */
+    public void changerLampe(){
+        if(this.estAllume){
+            this.estAllume=false;
+        }
+        else{
+            this.estAllume=true;
+        }
+    }
 }
