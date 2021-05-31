@@ -49,5 +49,17 @@ public class Terrain extends Observable{
         this.lampes=lampes;
     }
 
+    /**
+    * Retourne le nombre de clics
+    */
+    public int getNbClic(){
+        return this.nbClic;
+    }
 
+    /**
+    * Incremente de 1 le nombre de clic
+    */
+    public void plusNbClic(){
+        this.nbClic++;
+    }
 }
