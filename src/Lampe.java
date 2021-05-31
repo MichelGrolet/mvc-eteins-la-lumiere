@@ -23,13 +23,19 @@ public class Lampe{
     private int y;
 
     /**
+    * Booleen indiquant si la lampe est allume
+    */
+    private boolean estAllume;
+
+    /**
     * Constructeur qui prends des coordonnees x y pour creer une lampe
     * @param x coordonnee x de depart
     * @param y coordonnee y de depart
     */
-    public Lampe(){
+    public Lampe(int x,int y){
         this.x=x;
         this.y=y;
+        this.estAllume=false;
     }
 
     
