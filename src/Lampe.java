@@ -8,34 +8,28 @@ import java.util.Observable;
 
 public class Lampe{
     /**
-    * Tableau representant les lampes avec des booleens
+    * Constante pour la taille d'une lampe
     */
-    private boolean[] lampes;
+    public final static int TAILLE=100;
 
     /**
-    * Constructeur aleatoire du terrain de lampes
+    * Coordonnee x d'une lampe
     */
-    public Terrain(){
-        this.lampes=new boolean[25];
-
-        //On allume aléatoirement les lampes
-        int alea;
-        for(int i=0;i<25;i++){
-            alea=(int)Math.floor(Math.random()*2);
-            if(alea==0){
-                this.lampes[i]=false;
-            }
-            else{
-                this.lampes[i]=true;
-            }
-        }
-    }
+    private int x;
 
     /**
-    * Constructeur prenant un tableau de booleen choisis en parametre
+    * Coordonnee y d'une lampe
     */
-    public Terrain(boolean[] lampes){
-        this.lampes=lampes;
+    private int y;
+
+    /**
+    * Constructeur qui prends des coordonnees x y pour creer une lampe
+    * @param x coordonnee x de depart
+    * @param y coordonnee y de depart
+    */
+    public Lampe(){
+        this.x=x;
+        this.y=y;
     }
 
     
