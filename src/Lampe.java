@@ -49,4 +49,25 @@ public class Lampe{
             this.estAllume=true;
         }
     }
+
+    /**
+    * Retourne la coordonnee x de la lampe
+    */
+    public int getX(){
+        return this.x;
+    }
+
+    /**
+    * Retourne la coordonnee y de la lampe
+    */
+    public int getY(){
+        return this.y;
+    }
+
+    /**
+    * Retourne l'etat de la lampe
+    */
+    public int getAllume(){
+        return this.estAllume;
+    }
 }
