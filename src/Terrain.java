@@ -13,6 +13,11 @@ public class Terrain extends Observable{
     private Lampe[] lampes;
 
     /**
+    * Nombre de clics sur le tableau lors d'une partie
+    */
+    private int nbClic;
+
+    /**
     * Constructeur aleatoire du terrain de lampes
     */
     public Terrain(){
@@ -44,5 +49,5 @@ public class Terrain extends Observable{
         this.lampes=lampes;
     }
 
-    
+
 }
