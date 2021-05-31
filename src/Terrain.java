@@ -80,7 +80,14 @@ public class Terrain extends Observable{
                 this.lampes[i].changerLampe();
                 trouve=true;
             }
-            i++;
+            else{
+                i++;
+            } 
         }
+        //On allume les 4 lampes adjacentes, en fonction da la place dans le tableau
+        this.lampes[(i+1)%25].changerLampe();
+        this.lampes[(i-1)%25].changerLampe();
+        this.lampes[(i+5)%25].changerLampe();
+        this.lampes[(i-5)%25].changerLampe();
     }
 }
