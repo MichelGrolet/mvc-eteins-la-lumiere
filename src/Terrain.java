@@ -89,5 +89,12 @@ public class Terrain extends Observable{
         this.lampes[(i-1)%25].changerLampe();
         this.lampes[(i+5)%25].changerLampe();
         this.lampes[(i-5)%25].changerLampe();
+
+        //On ajoute un clic
+        plusNbClic();
+
+        //On met a jour les changements et on notifie les observers
+        setChanged();
+        notifyObservers();
     }
 }
