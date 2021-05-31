@@ -6,7 +6,7 @@ import java.math.*;
 import java.util.*;
 import java.util.Observable;
 
-public class Terrain extends Observable{
+public class Lampe{
     /**
     * Tableau representant les lampes avec des booleens
     */
