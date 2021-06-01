@@ -6,7 +6,7 @@ public class Principale {
 	public static void main(String[] args) {
 		//Creation des vues
 		VueBoutons vueBoutons = new VueBoutons();
-		VueTerrain vueTerrain = new VueTerrain();
+		VueTerrain vueTerrain = new VueTerrain(new Terrain());
 
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

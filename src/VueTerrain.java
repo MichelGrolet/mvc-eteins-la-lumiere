@@ -5,7 +5,13 @@ import java.util.Observer;
 
 public class VueTerrain extends JPanel implements Observer {
 
-	public VueTerrain() {
+
+	private Terrain t;
+
+	public VueTerrain(Terrain t) {
+		this.t = t;
+		this.setPreferredSize(new Dimension(500, 500));
+		this.setLayout(new GridLayout(5, 5));
 
 	}
 
