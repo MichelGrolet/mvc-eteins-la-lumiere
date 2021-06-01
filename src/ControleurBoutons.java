@@ -27,6 +27,8 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.aleaLampe();
+                vue.getQuitter().setEnabled(true);
+                vue.getJouer().setEnabled(true);
             }
         });
         vue.getJouer().addActionListener(new ActionListener() {
