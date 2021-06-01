@@ -67,7 +67,7 @@ public class Lampe{
     /**
     * Retourne l'etat de la lampe
     */
-    public int getAllume(){
+    public boolean getAllume(){
         return this.estAllume;
     }
 }

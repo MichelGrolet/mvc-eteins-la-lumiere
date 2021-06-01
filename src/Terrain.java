@@ -18,11 +18,24 @@ public class Terrain extends Observable{
     private int nbClic;
 
     /**
-    * Constructeur aleatoire du terrain de lampes
+    * Constructeur du terrain de lampes, eteintes
     */
     public Terrain(){
+        //Tableau de 25 lampes
         this.lampes=new Lampe[25];
 
+        //On cree des lampes, avec des coordonnees d'un tableau 5x5
+        for(int i=0;i<5;i++){
+            for(int j=0;j<5;j++){
+                this.lampes[i]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
+            }
+        }
+    }
+
+    /**
+    * Permet d'allumer aleatoirement les lampes du terrain
+    */
+    public void aleaLampe(){
         //On allume aléatoirement les lampes
         int alea;
         for(int i=0;i<5;i++){
@@ -30,12 +43,7 @@ public class Terrain extends Observable{
                 alea=(int)Math.floor(Math.random()*2);
                 //Si alea vaut 1, on change l'etat de la lampe, qui est eteinte de base
                 if(alea==1){
-                    this.lampes[i]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
                     this.lampes[i].changerLampe();
-                }
-                //Sinon on cree une lampe eteinte
-                else{
-                    this.lampes[i]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
                 }
             }
         }
@@ -51,6 +59,7 @@ public class Terrain extends Observable{
 
     /**
     * Retourne le nombre de clics
+    * @return un entier
     */
     public int getNbClic(){
         return this.nbClic;
@@ -85,10 +94,18 @@ public class Terrain extends Observable{
             } 
         }
         //On allume les 4 lampes adjacentes, en fonction da la place dans le tableau
+
+        //Celle a droite de la lampe cliquee
         this.lampes[(i+1)%25].changerLampe();
+
+        //Celle a gauche de la lampe cliquee
         this.lampes[(i-1)%25].changerLampe();
+
+        //Celle en bas de la lampe cliquee
         this.lampes[(i+5)%25].changerLampe();
-        this.lampes[(i-5)%25].changerLampe();
+
+        //Celle en haut de la lampe cliquee
+        this.lampes[(i+20)%25].changerLampe();
 
         //On ajoute un clic
         plusNbClic();
@@ -96,5 +113,13 @@ public class Terrain extends Observable{
         //On met a jour les changements et on notifie les observers
         setChanged();
         notifyObservers();
+    }
+
+    /**
+    * Retourne le tableau de lampes
+    * @return un tableau de lampes
+    */
+    public Lampe[] getLampes(){
+        return this.lampes;
     }
 }
