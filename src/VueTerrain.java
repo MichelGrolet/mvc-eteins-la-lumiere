@@ -46,7 +46,7 @@ public class VueTerrain extends JPanel implements Observer {
 				g.fillRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
 				Lampe.TAILLE,Lampe.TAILLE);
 			}
-		} 
+		}
 
 		//On dessine une grille pour distinguer les lampes
         g.setColor(Color.BLACK);
