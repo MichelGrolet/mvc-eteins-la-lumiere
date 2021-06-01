@@ -20,7 +20,7 @@ public class ControleurBoutons {
 	    vue.getConfigurer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modele.aleaLampe();
+
             }
         });
         vue.getAleatoire().addActionListener(new ActionListener() {

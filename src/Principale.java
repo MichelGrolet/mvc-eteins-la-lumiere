@@ -14,7 +14,7 @@ public class Principale {
 
 		//Creation des controleurs
 		ControleurBoutons controleurBoutons = new ControleurBoutons(vueBoutons, modele);
-		ControleurTerrain controleurTerrain = new ControleurTerrain(vueBoutons, modele);
+		ControleurTerrain controleurTerrain = new ControleurTerrain(vueTerrain, modele);
 
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
