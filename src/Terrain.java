@@ -83,6 +83,7 @@ public class Terrain extends Observable{
         boolean trouve=false;
         int i=0;
         while(!trouve){
+            //bugue
             //Si les coordonnees fournies sont comprises dans la lampe, on change on etat
             if(this.lampes[i].getX()<x && this.lampes[i].getY()<y && this.lampes[i].getX()+Lampe.TAILLE<=x
             && this.lampes[i].getY()+Lampe.TAILLE<=y){
@@ -136,6 +137,8 @@ public class Terrain extends Observable{
 
     /**
     * Change l'etat de la lampe aux coordonnees donnees
+    * @param x coordonnee x
+    * @param y coordonnee y
     */
     public void configLampe(int x,int y){
         boolean trouve=false;
