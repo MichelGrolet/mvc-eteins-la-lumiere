@@ -84,8 +84,8 @@ public class Terrain extends Observable{
         int i=0;
         while(!trouve){
             //Si les coordonnees fournies sont comprises dans la lampe, on change on etat
-            if(this.lampes[i].getX()>x && this.lampes[i].getY()>y && this.lampes[i].getX()<=x+Lampe.TAILLE 
-            && this.lampes[i].getY()<=y+Lampe.TAILLE){
+            if(this.lampes[i].getX()<x && this.lampes[i].getY()<y && this.lampes[i].getX()+Lampe.TAILLE<=x
+            && this.lampes[i].getY()+Lampe.TAILLE<=y){
                 this.lampes[i].changerLampe();
                 trouve=true;
             }
@@ -132,5 +132,24 @@ public class Terrain extends Observable{
                 this.lampes[i].changerLampe();
             }
         }
+    }
+
+    /**
+    * Change l'etat de la lampe aux coordonnees donnees
+    */
+    public void configLampe(int x,int y){
+        boolean trouve=false;
+        int i=0;
+        while(!trouve){
+            //Si les coordonnees fournies sont comprises dans la lampe, on change on etat
+            if(this.lampes[i].getX()<x && this.lampes[i].getY()<y && this.lampes[i].getX()+Lampe.TAILLE<=x
+            && this.lampes[i].getY()+Lampe.TAILLE<=y){
+                this.lampes[i].changerLampe();
+                trouve=true;
+            }
+            else{
+                i++;
+            } 
+        } 
     }
 }
