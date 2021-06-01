@@ -34,17 +34,9 @@ public class VueTerrain extends JPanel implements Observer {
         super.paintComponent(g);
 
         g.setColor(Color.BLACK);
-<<<<<<< HEAD
         for(int i=0;i<25;i++){
 			g.drawRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
 			this.t.getLampes()[i].getX()+Lampe.TAILLE,this.t.getLampes()[i].getY()+Lampe.TAILLE);
-=======
-        for(int i=1;i<6;i++){
-			for(int j=0;j<5;j++){
-				g.drawRect(this.t.getLampes()[i*j].getX(),this.t.getLampes()[i*j].getY(),
-				this.t.getLampes()[i*j].getX()+Lampe.TAILLE,this.t.getLampes()[i*j].getY()+Lampe.TAILLE);
-			}
->>>>>>> 94f07f77facd9502416bc31058afe0a406cc33a8
         }
 
         for(int i=0;i<25;i++){
