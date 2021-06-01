@@ -20,7 +20,7 @@ public class VueBoutons extends JPanel implements Observer {
 		configurer = new JButton("Configurer");
 		aleatoire = new JButton("Aleatoire");
 		jouer = new JButton("Jouer");
-		mouvements = new JLabel(" Deplacements : 0");
+		mouvements = new JLabel(" Clics : 0");
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
 		quitter = new JButton("Quitter");
 
@@ -47,7 +47,7 @@ public class VueBoutons extends JPanel implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		this.t = (Terrain) o;
-		//mouvements.setText("Deplacements : "+t.getNbClics());
+		mouvements.setText("Clics : "+t.getNbClic());
 	}
 
 	public void ToggleBouton(JButton bouton) {

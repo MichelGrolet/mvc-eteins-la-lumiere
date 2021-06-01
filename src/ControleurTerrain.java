@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.event.MouseInputAdapter;
+import java.awt.event.MouseEvent;
 
 public class ControleurTerrain extends MouseInputAdapter {
 
@@ -19,5 +20,11 @@ public class ControleurTerrain extends MouseInputAdapter {
 
     public void mouseClicked(MouseEvent e){
         modele.changeLampe(e.getX(),e.getY());
+    }
+
+    public void mousePressed(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        modele.changeLampe(x, y);
     }
 }
