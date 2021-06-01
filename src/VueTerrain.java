@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.Observable;
 import java.util.Observer;
+import java.util.Observable;
 
 public class VueTerrain extends JPanel implements Observer {
 	/**
@@ -36,22 +36,22 @@ public class VueTerrain extends JPanel implements Observer {
         g.setColor(Color.BLACK);
         for(int i=1;i<6;i++){
 			for(int j=0;j<5;j++){
-				g.drawRect(this.t.getLampes().get(i*j).getX(),this.t.getLampes().get(i*j).getY(),
-				this.t.getLampes().get(i*j).getX()+Lampe.TAILLE,this.t.getLampes().get(i*j).getY()+Lampe.TAILLE);
+				g.drawRect(this.t.getLampes()[i*j].getX(),this.t.getLampes()[i*j].getY(),
+				this.t.getLampes()[i*j].getX()+Lampe.TAILLE,this.t.getLampes()[i*j].getY()+Lampe.TAILLE);
 			} 
         }
 
         for(int i=1;i<6;i++){
 			for(int j=0;j<5;j++){
-				if(this.t.getLampes().get(i*j).getAllume()){
+				if(this.t.getLampes()[i*j].getAllume()){
 					g.setColor(Color.GREEN);
-					g.fillRect(this.t.getLampes().get(i*j).getX()+1,this.t.getLampes().get(i*j).getY()+1,
-					(this.t.getLampes().get(i*j).getX()+Lampe.TAILLE)-1,(this.t.getLampes().get(i*j).getY()+Lampe.TAILLE)-1);
+					g.fillRect(this.t.getLampes()[i*j].getX()+1,this.t.getLampes()[i*j].getY()+1,
+					(this.t.getLampes()[i*j].getX()+Lampe.TAILLE)-1,(this.t.getLampes()[i*j].getY()+Lampe.TAILLE)-1);
 				}
 				else{
 					g.setColor(Color.GRAY);
-					g.fillRect(this.t.getLampes().get(i*j).getX()+1,this.t.getLampes().get(i*j).getY()+1,
-					(this.t.getLampes().get(i*j).getX()+Lampe.TAILLE)-1,(this.t.getLampes().get(i*j).getY()+Lampe.TAILLE)-1);
+					g.fillRect(this.t.getLampes()[i*j].getX()+1,this.t.getLampes()[i*j].getY()+1,
+					(this.t.getLampes()[i*j].getX()+Lampe.TAILLE)-1,(this.t.getLampes()[i*j].getY()+Lampe.TAILLE)-1);
 				}
 			} 
         }
