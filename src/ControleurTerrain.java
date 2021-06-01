@@ -2,16 +2,16 @@ import javax.swing.event.MouseInputAdapter;
 
 public class ControleurTerrain extends MouseInputAdapter {
 
-    private VueBoutons vue;
+    private VueTerrain vue;
 
     private Terrain modele;
 
     /**
      *
-     * @param vue VueBoutons sur laquelle on ajoute les listeners.
+     * @param vue VueTerrain sur laquelle on ajoute les listeners.
      * @param modele Terrain
      */
-    public ControleurTerrain(VueBoutons vue, Terrain modele) {
+    public ControleurTerrain(VueTerrain vue, Terrain modele) {
         this.vue = vue;
         this.modele = modele;
     }
