@@ -7,12 +7,16 @@ public class ControlleurBoutons {
 
 	private final VueBoutons vue;
 
+	private final Terrain modele;
+
     /**
      * Ajoute les listeners sur les boutons.
-     * @param vue VueBoutons su laquelle on ajoute les listeners.
+     * @param vue VueBoutons sur laquelle on ajoute les listeners.
+     * @param modele Terrain
      */
-	public ControlleurBoutons(VueBoutons vue) {
+	public ControlleurBoutons(VueBoutons vue, Terrain modele) {
 	    this.vue = vue;
+	    this.modele = modele;
 	    vue.getConfigurer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
