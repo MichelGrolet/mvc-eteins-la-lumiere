@@ -27,7 +27,7 @@ public class Terrain extends Observable{
         //On cree des lampes, avec des coordonnees d'un tableau 5x5
         for(int i=0;i<5;i++){
             for(int j=0;j<5;j++){
-                this.lampes[i]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
+                this.lampes[i*5+j]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
             }
         }
     }
