@@ -24,10 +24,8 @@ public class VueBoutons extends JPanel implements Observer {
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
 		quitter = new JButton("Quitter");
 
-		jouer.setBorderPainted(false);
-		jouer.setFocusPainted(false);
-		quitter.setBorderPainted(false);
-		quitter.setFocusPainted(false);
+		jouer.setEnabled(false);
+		quitter.setEnabled(false);
 
 		// Les boutons seront dans une grille a une colonne
 		this.setLayout(new GridLayout(5, 1));
@@ -53,7 +51,6 @@ public class VueBoutons extends JPanel implements Observer {
 	}
 
 	public void ToggleBouton(JButton bouton) {
-		if (bouton.)
 		jouer.setBorderPainted(false);
 		jouer.setFocusPainted(false);
 	}
