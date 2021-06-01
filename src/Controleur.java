@@ -2,10 +2,13 @@ import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
-public class ControleurBoutons {
+public class Controleur {
 
-	private final VueBoutons vue;
+	private final VueBoutons vueBoutons;
+
+	private final VueTerrain vueTerrain;
 
 	private final Terrain modele;
 
@@ -14,34 +17,39 @@ public class ControleurBoutons {
      * @param vue VueBoutons sur laquelle on ajoute les listeners.
      * @param modele Terrain
      */
-	public ControleurBoutons(VueBoutons vue, Terrain modele) {
-	    this.vue = vue;
+	public Controleur(VueBoutons vueBoutons, VueTerrain vueTerrain, Terrain modele) {
+	    this.vueBoutons = vueBoutons;
+        this.vueTerrain = vueTerrain;
 	    this.modele = modele;
-	    vue.getConfigurer().addActionListener(new ActionListener() {
+        vueBoutons.getConfigurer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
-        vue.getAleatoire().addActionListener(new ActionListener() {
+        vueBoutons.getAleatoire().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.aleaLampe();
-                vue.getQuitter().setEnabled(true);
-                vue.getJouer().setEnabled(true);
+                vueBoutons.getQuitter().setEnabled(true);
+                vueBoutons.getJouer().setEnabled(true);
             }
         });
-        vue.getJouer().addActionListener(new ActionListener() {
+        vueBoutons.getJouer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
-        vue.getQuitter().addActionListener(new ActionListener() {
+        vueBoutons.getQuitter().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
+    }
+
+    public void mouseClicked(MouseEvent e){
+        modele.changeLampe(e.getX(),e.getY());
     }
 }
