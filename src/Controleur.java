@@ -52,7 +52,7 @@ public class Controleur implements MouseListener {
     }
 
     public void mouseClicked(MouseEvent e){
-        modele.changeLampe(e.getX(),e.getY());
+        modele.changeLampe(e.getX()-100,e.getY()-100);
     }
 
     @Override
