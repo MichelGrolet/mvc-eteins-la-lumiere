@@ -38,7 +38,7 @@ public class VueTerrain extends JPanel implements Observer {
 			for(int j=0;j<5;j++){
 				g.drawRect(this.t.getLampes()[i*j].getX(),this.t.getLampes()[i*j].getY(),
 				this.t.getLampes()[i*j].getX()+Lampe.TAILLE,this.t.getLampes()[i*j].getY()+Lampe.TAILLE);
-			} 
+			}
         }
 
         for(int i=1;i<6;i++){

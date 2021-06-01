@@ -3,7 +3,7 @@ import javax.swing.event.MouseInputAdapter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ControlleurBoutons {
+public class ControleurBoutons {
 
 	private final VueBoutons vue;
 
@@ -14,19 +14,19 @@ public class ControlleurBoutons {
      * @param vue VueBoutons sur laquelle on ajoute les listeners.
      * @param modele Terrain
      */
-	public ControlleurBoutons(VueBoutons vue, Terrain modele) {
+	public ControleurBoutons(VueBoutons vue, Terrain modele) {
 	    this.vue = vue;
 	    this.modele = modele;
 	    vue.getConfigurer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                modele.aleaLampe();
             }
         });
         vue.getAleatoire().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                modele.aleaLampe();
             }
         });
         vue.getJouer().addActionListener(new ActionListener() {
