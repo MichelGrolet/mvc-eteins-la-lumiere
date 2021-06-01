@@ -33,6 +33,8 @@ public class VueTerrain extends JPanel implements Observer {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+		//On dessine un carre pour chaque lampes,
+		//Gris si eteinte, vert si allumee
 		for(int i=0;i<25;i++){
 			if(this.t.getLampes()[i].getAllume()){
 				g.setColor(Color.GREEN);
@@ -46,6 +48,7 @@ public class VueTerrain extends JPanel implements Observer {
 			}
 		} 
 
+		//On dessine une grille pour distinguer les lampes
         g.setColor(Color.BLACK);
         for(int i=0;i<25;i++){
 			g.drawRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
