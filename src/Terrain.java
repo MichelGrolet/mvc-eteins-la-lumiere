@@ -122,4 +122,15 @@ public class Terrain extends Observable{
     public Lampe[] getLampes(){
         return this.lampes;
     }
+
+    /**
+    * Permet d'eteindre toutes les lampes
+    */
+    public void reinitialiser(){
+        for(int i=0;i<this.lampes.length;i++){
+            if(this.lampes[i].getAllume()){
+                this.lampes[i].changerLampe();
+            }
+        }
+    }
 }
