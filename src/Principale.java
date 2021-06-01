@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.BorderLayout;
 
 public class Principale {
@@ -14,9 +13,8 @@ public class Principale {
 		modele.addObserver(vueTerrain);
 
 		//Creation des controleurs
-		ControlleurBoutons controlleurBoutons = new ControlleurBoutons(vueBoutons, modele);
-		ControlleurTerrain controlleurTerrain = new ControlleurTerrain(vueBoutons, modele);
-
+		ControleurBoutons controleurBoutons = new ControleurBoutons(vueBoutons, modele);
+		ControleurTerrain controleurTerrain = new ControleurTerrain(vueBoutons, modele);
 
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
