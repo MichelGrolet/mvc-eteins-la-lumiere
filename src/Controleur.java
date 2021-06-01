@@ -23,12 +23,14 @@ public class Controleur implements MouseListener {
 	    this.vueBoutons = vueBoutons;
         this.vueTerrain = vueTerrain;
 	    this.modele = modele;
+	    // CONFIGURER
         vueBoutons.getConfigurer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
+        // ALEATOIRE
         vueBoutons.getAleatoire().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,12 +39,14 @@ public class Controleur implements MouseListener {
                 vueBoutons.getJouer().setEnabled(true);
             }
         });
+        // JOUER
         vueBoutons.getJouer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
+        // QUITTER
         vueBoutons.getQuitter().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,12 +56,12 @@ public class Controleur implements MouseListener {
     }
 
     public void mouseClicked(MouseEvent e){
-        modele.changeLampe(e.getX()-100,e.getY()-100);
+
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        modele.changeLampe(e.getX()-100,e.getY()-100);
     }
 
     @Override
