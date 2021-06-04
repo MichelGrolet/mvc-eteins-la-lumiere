@@ -20,25 +20,21 @@ public class VueBoutons extends JPanel implements Observer {
 		configurer = new JButton("Configurer");
 		aleatoire = new JButton("Aleatoire");
 		jouer = new JButton("Jouer");
+		quitter = new JButton("Quitter");
+
+		//Creation du JLabel
 		mouvements = new JLabel(" Clics : 0");
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
-		quitter = new JButton("Quitter");
 
 		setBouton(configurer, true);
 		setBouton(aleatoire, true);
 		setBouton(jouer, false);
+		this.add(mouvements);
 		setBouton(quitter, false);
 
 		// Les boutons seront dans une grille a une colonne
 		this.setLayout(new GridLayout(5, 1));
 		this.setPreferredSize(new Dimension(200, 500));
-
-		// Ajout des boutons au panel
-		this.add(configurer);
-		this.add(aleatoire);
-		this.add(jouer);
-		this.add(mouvements);
-		this.add(quitter);
 	}
 
 	/**
@@ -81,9 +77,16 @@ public class VueBoutons extends JPanel implements Observer {
 		return t;
 	}
 
+	/**
+	 * Appelle les fonctions de base pour les boutons
+	 * @param b bouton a initialiser
+	 * @param actif definit si le bouton doit etre actif ou non
+	 */
 	public void setBouton(JButton b, boolean actif) {
 		b.setFont(new Font("Verdana", Font.PLAIN, 13));
 		setActif(b, actif);
+		// Ajout du bouton au panel
+		this.add(b);
 	}
 
 	public void setActif(JButton b, boolean actif) {
