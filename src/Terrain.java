@@ -18,7 +18,7 @@ public class Terrain extends Observable{
     private int nbClic;
 
     /**
-    * Etat du jeu actuel (inactif,configuration,en jeu)
+    * Etat du jeu actuel (inactif,configuration,jeu)
     */
     private String mode;
 

@@ -10,7 +10,7 @@ public class VueTerrain extends JPanel implements Observer{
 	private Terrain t;
 
 	/**
-	* Indique si la parti est gagnee
+	* Indique si la partie est gagnee
 	*/
 	private boolean gagne;
 
@@ -29,7 +29,7 @@ public class VueTerrain extends JPanel implements Observer{
 	*/
 	@Override
 	public void update(Observable o, Object arg){
-		if(t.modeValeur("en jeu")){
+		if(t.modeValeur("jeu")){
 			this.gagne=this.t.cGagne();
 		}
 		repaint();
