@@ -30,6 +30,8 @@ public class Controleur implements MouseListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Controleur.this.mode = "configuration";
+                vueBoutons.getQuitter().setEnabled(true);
+                vueBoutons.getJouer().setEnabled(true);
             }
         });
         // ALEATOIRE
