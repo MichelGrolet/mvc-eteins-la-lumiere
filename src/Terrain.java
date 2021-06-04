@@ -83,7 +83,6 @@ public class Terrain extends Observable{
         boolean trouve=false;
         int i=0;
         while(!trouve){
-            //bugue
             //Si les coordonnees fournies sont comprises dans la lampe, on change on etat
             if(this.lampes[i].getX()<x && this.lampes[i].getY()<y && this.lampes[i].getX()+Lampe.TAILLE>=x
             && this.lampes[i].getY()+Lampe.TAILLE>=y){
@@ -96,17 +95,26 @@ public class Terrain extends Observable{
         }
         //On allume les 4 lampes adjacentes, en fonction da la place dans le tableau
 
+        //Celle en haut de la lampe cliquee
+        if(i>=5){
+            this.lampes[(i+20)%25].changerLampe();
+        }
+
         //Celle a droite de la lampe cliquee
-        this.lampes[(i+1)%25].changerLampe();
+        if((i+1)%5!=0){
+            this.lampes[i+1].changerLampe();
+        }
 
         //Celle a gauche de la lampe cliquee
+        if(i%4!=0){
+            this.lampes[i+1].changerLampe();
+        }
         this.lampes[(i+24)%25].changerLampe();
 
         //Celle en bas de la lampe cliquee
-        this.lampes[(i+5)%25].changerLampe();
-
-        //Celle en haut de la lampe cliquee
-        this.lampes[(i+20)%25].changerLampe();
+        if(i<20){
+            this.lampes[(i+5)%25].changerLampe();
+        }
 
         //On ajoute un clic
         plusNbClic();
@@ -133,6 +141,8 @@ public class Terrain extends Observable{
                 this.lampes[i].changerLampe();
             }
         }
+        setChanged();
+        notifyObservers();
     }
 
     /**
@@ -154,5 +164,7 @@ public class Terrain extends Observable{
                 i++;
             } 
         } 
+        setChanged();
+        notifyObservers();
     }
 }
