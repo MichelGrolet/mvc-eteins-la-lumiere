@@ -13,9 +13,9 @@ public class Principale {
 		modele.addObserver(vueTerrain);
 
 		//Creation du controleur
-		Controleur controleur = new Controleur(vueBoutons, vueTerrain, modele);
-		vueBoutons.addMouseListener(controleur);
-		vueTerrain.addMouseListener(controleur);
+		ControleurTerrain controleurTerrain = new ControleurTerrain(vueTerrain, modele);
+		ControleurBoutons controleurBoutons = new ControleurBoutons(vueBoutons, vueTerrain, modele);
+		vueTerrain.addMouseListener(controleurTerrain);
 
 		//Creation du JFrame
 		JFrame f = new JFrame();

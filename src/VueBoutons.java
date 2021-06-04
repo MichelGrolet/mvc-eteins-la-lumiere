@@ -24,6 +24,15 @@ public class VueBoutons extends JPanel implements Observer {
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
 		quitter = new JButton("Quitter");
 
+		configurer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		aleatoire.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		jouer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		quitter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		configurer.setFont(new Font("Verdana", Font.PLAIN, 15));
+		aleatoire.setFont(new Font("Verdana", Font.PLAIN, 15));
+		jouer.setFont(new Font("Verdana", Font.PLAIN, 15));
+		quitter.setFont(new Font("Verdana", Font.PLAIN, 15));
+		quitter.setBackground(Color.decode("#F0B90B"));
 		jouer.setEnabled(false);
 		quitter.setEnabled(false);
 
