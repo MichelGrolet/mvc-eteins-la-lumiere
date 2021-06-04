@@ -18,6 +18,11 @@ public class Terrain extends Observable{
     private int nbClic;
 
     /**
+    * Etat du jeu actuel (inactif,configuration,en jeu)
+    */
+    private String mode;
+
+    /**
     * Constructeur du terrain de lampes, eteintes
     */
     public Terrain(){
@@ -30,6 +35,8 @@ public class Terrain extends Observable{
                 this.lampes[i*5+j]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
             }
         }
+
+        this.mode="inactif";
     }
 
     /**
@@ -164,6 +171,31 @@ public class Terrain extends Observable{
                 i++;
             }
         }
+        setChanged();
+        notifyObservers();
+    }
+
+    /**
+    * Retourne vrai si le mode actuel correspond au parametre
+    * @param mode le mode a tester
+    * @return un booleen
+    */
+    public boolean modeValeur(String mode){
+        if(this.mode.equals(mode)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    /**
+    * Permet de changer l'etat du jeu actuel
+    * @param mode le nouveau mode
+    */
+    public void setMode(String mode){
+        this.mode=mode;
+
         setChanged();
         notifyObservers();
     }
