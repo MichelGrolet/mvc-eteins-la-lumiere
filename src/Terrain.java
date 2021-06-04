@@ -162,8 +162,8 @@ public class Terrain extends Observable{
             }
             else{
                 i++;
-            } 
-        } 
+            }
+        }
         setChanged();
         notifyObservers();
     }

@@ -13,7 +13,7 @@ public class Controleur implements MouseListener {
 
 	private final Terrain modele;
 
-	private boolean config;
+	private String mode = "inactif";
 
     /**
      * Ajoute les listeners sur les boutons.
@@ -29,7 +29,7 @@ public class Controleur implements MouseListener {
         vueBoutons.getConfigurer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Controleur.this.config = true;
+                Controleur.this.mode = "configuration";
             }
         });
         // ALEATOIRE
@@ -45,7 +45,7 @@ public class Controleur implements MouseListener {
         vueBoutons.getJouer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                config = false;
+                Controleur.this.mode = "jeu";
             }
         });
         // QUITTER
@@ -65,8 +65,8 @@ public class Controleur implements MouseListener {
     public void mousePressed(MouseEvent e) {
 	    int x = e.getX();
 	    int y = e.getY();
-	    if (this.config) modele.configLampe(x, y);
-        else modele.changeLampe(x, y);
+	    if (this.mode.equals("configuration")) modele.configLampe(x, y);
+        else if (this.mode.equals("jeu")) modele.changeLampe(x, y);
     }
 
     @Override
