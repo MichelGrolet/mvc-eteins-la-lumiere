@@ -141,6 +141,7 @@ public class Terrain extends Observable{
                 this.lampes[i].changerLampe();
             }
         }
+        this.nbClic=0;
         setChanged();
         notifyObservers();
     }
