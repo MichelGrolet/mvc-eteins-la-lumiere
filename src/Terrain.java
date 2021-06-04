@@ -106,10 +106,9 @@ public class Terrain extends Observable{
         }
 
         //Celle a gauche de la lampe cliquee
-        if(i%4!=0){
-            this.lampes[i+1].changerLampe();
+        if(i%5!=0 && i!=0){
+            this.lampes[i-1].changerLampe();
         }
-        this.lampes[(i+24)%25].changerLampe();
 
         //Celle en bas de la lampe cliquee
         if(i<20){
