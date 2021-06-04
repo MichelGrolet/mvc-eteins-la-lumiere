@@ -38,13 +38,11 @@ public class Terrain extends Observable{
     public void aleaLampe(){
         //On allume aléatoirement les lampes
         int alea;
-        for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
-                alea=(int)Math.floor(Math.random()*2);
-                //Si alea vaut 1, on change l'etat de la lampe, qui est eteinte de base
-                if(alea==1){
-                    this.lampes[i].changerLampe();
-                }
+        for(int i=0;i<25;i++){
+            alea=(int)Math.floor(Math.random()*2);
+            //Si alea vaut 1, on change l'etat de la lampe, qui est eteinte de base
+            if(alea==1){
+                this.lampes[i].changerLampe();
             }
         }
         setChanged();
