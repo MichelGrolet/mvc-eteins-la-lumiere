@@ -205,16 +205,17 @@ public class Terrain extends Observable{
     * @return un booleen
     */
     public boolean cGagne(){
+        boolean a = true;
         //On regarde si une lampe est allumee
         for(int i=0;i<this.lampes.length;i++){
             if(this.lampes[i].getAllume()){
-                return false;
+                a = false;
             }
         }
 
         setChanged();
         notifyObservers();
         
-        return true;
+        return a;
     }
 }
