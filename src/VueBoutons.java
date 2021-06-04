@@ -24,17 +24,10 @@ public class VueBoutons extends JPanel implements Observer {
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
 		quitter = new JButton("Quitter");
 
-		configurer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		aleatoire.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		jouer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		quitter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		configurer.setFont(new Font("Verdana", Font.PLAIN, 15));
-		aleatoire.setFont(new Font("Verdana", Font.PLAIN, 15));
-		jouer.setFont(new Font("Verdana", Font.PLAIN, 15));
-		quitter.setFont(new Font("Verdana", Font.PLAIN, 15));
-		quitter.setBackground(Color.decode("#F0B90B"));
-		jouer.setEnabled(false);
-		quitter.setEnabled(false);
+		setBouton(configurer, true);
+		setBouton(aleatoire, true);
+		setBouton(jouer, false);
+		setBouton(quitter, false);
 
 		// Les boutons seront dans une grille a une colonne
 		this.setLayout(new GridLayout(5, 1));
@@ -86,5 +79,21 @@ public class VueBoutons extends JPanel implements Observer {
 
 	public Terrain getT() {
 		return t;
+	}
+
+	public void setBouton(JButton b, boolean actif) {
+		b.setFont(new Font("Verdana", Font.PLAIN, 13));
+		setActif(b, actif);
+	}
+
+	public void setActif(JButton b, boolean actif) {
+		this.setEnabled(actif);
+		if (actif) {
+			b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			b.setBackground(Color.decode("#F0B90B"));
+		} else {
+			b.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			b.setBackground(Color.decode("#FFFFFF"));
+		}
 	}
 }

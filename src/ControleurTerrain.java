@@ -25,7 +25,6 @@ public class ControleurTerrain implements MouseListener {
     public void mousePressed(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        System.out.println(x+" "+y);
         if (x<=500 && y<=500) {
             if (this.modele.modeValeur("configuration")) modele.configLampe(x, y);
             else if (this.modele.modeValeur("jeu")) modele.changeLampe(x, y);

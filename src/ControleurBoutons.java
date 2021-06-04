@@ -24,8 +24,8 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("configuration");
-                vueBoutons.getQuitter().setEnabled(true);
-                vueBoutons.getJouer().setEnabled(true);
+                vueBoutons.setBouton(vueBoutons.getQuitter(), true);
+                vueBoutons.setBouton(vueBoutons.getJouer(), true);
             }
         });
         // ALEATOIRE
@@ -33,8 +33,8 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.aleaLampe();
-                vueBoutons.getQuitter().setEnabled(true);
-                vueBoutons.getJouer().setEnabled(true);
+                vueBoutons.setBouton(vueBoutons.getQuitter(), true);
+                vueBoutons.setBouton(vueBoutons.getJouer(), true);
             }
         });
         // JOUER
@@ -42,7 +42,7 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("jeu");
-                vueBoutons.getJouer().setEnabled(false);
+                vueBoutons.setBouton(vueBoutons.getJouer(), false);
             }
         });
         // QUITTER
@@ -50,8 +50,8 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.reinitialiser();
-                vueBoutons.getQuitter().setEnabled(false);
-                vueBoutons.getJouer().setEnabled(false);
+                vueBoutons.setBouton(vueBoutons.getQuitter(), false);
+                vueBoutons.setBouton(vueBoutons.getJouer(), false);
             }
         });
     }
