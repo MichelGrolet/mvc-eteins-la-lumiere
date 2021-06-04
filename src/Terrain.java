@@ -199,4 +199,22 @@ public class Terrain extends Observable{
         setChanged();
         notifyObservers();
     }
+
+    /**
+    * Permet de savoir si la partie est gagnee
+    * @return un booleen
+    */
+    public boolean cGagne(){
+        //On regarde si une lampe est allumee
+        for(int i=0;i<this.lampes.length;i++){
+            if(this.lampes[i].getAllume()){
+                return false;
+            }
+        }
+
+        setChanged();
+        notifyObservers();
+        
+        return true;
+    }
 }
