@@ -33,8 +33,9 @@ public class VueBoutons extends JPanel implements Observer {
 		setBouton(quitter, false);
 
 		// Les boutons seront dans une grille a une colonne
-		this.setLayout(new GridLayout(5, 1));
+		this.setLayout(new GridLayout(5, 1, 50, 50));
 		this.setPreferredSize(new Dimension(200, 500));
+		this.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 	}
 
 	/**

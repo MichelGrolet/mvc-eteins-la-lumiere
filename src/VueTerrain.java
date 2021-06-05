@@ -38,12 +38,12 @@ public class VueTerrain extends JPanel implements Observer{
 			//Gris si eteinte, vert si allumee
 			for(int i=0;i<25;i++){
 				if(this.t.getLampes()[i].getAllume()){
-					g.setColor(Color.decode("#FEFFDB"));
+					g.setColor(Color.decode("#fff2c7"));
 					g.fillRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
 					Lampe.TAILLE,Lampe.TAILLE);
 				}
 				else{
-					g.setColor(Color.GRAY);
+					g.setColor(Color.decode("#705600"));
 					g.fillRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
 					Lampe.TAILLE,Lampe.TAILLE);
 				}

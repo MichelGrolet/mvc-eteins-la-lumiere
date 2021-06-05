@@ -32,6 +32,7 @@ public class ControleurBoutons {
         vueBoutons.getAleatoire().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                modele.setMode("configuration");
                 modele.aleaLampe();
                 vueBoutons.setBouton(vueBoutons.getQuitter(), true);
                 vueBoutons.setBouton(vueBoutons.getJouer(), true);
