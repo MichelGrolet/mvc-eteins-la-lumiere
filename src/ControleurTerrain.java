@@ -28,7 +28,7 @@ public class ControleurTerrain implements MouseListener {
         if (x<=500 && y<=500) {
             if (this.modele.modeValeur("configuration")) modele.configLampe(x, y);
             else if (this.modele.modeValeur("jeu")) modele.changeLampe(x, y);
-            this.modele.cGagne();
+            if(this.modele.modeValeur("jeu")) this.modele.cGagne();
             if(this.modele.modeValeur("jeu") && this.modele.getGagne()){
                 this.modele.setMode("configuration");
                 this.modele.setGagne();
