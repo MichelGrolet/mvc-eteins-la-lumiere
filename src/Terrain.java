@@ -233,4 +233,11 @@ public class Terrain extends Observable{
     public boolean getGagne(){
         return this.gagne;
     }
+
+    /**
+    * Passe l'etat a non gagne
+    */
+    public void setGagne(){
+        this.gagne=false;
+    }
 }
