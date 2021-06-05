@@ -51,6 +51,7 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.reinitialiser();
+                modele.setMode("inactif");
                 vueBoutons.setBouton(vueBoutons.getQuitter(), false);
                 vueBoutons.setBouton(vueBoutons.getJouer(), false);
             }

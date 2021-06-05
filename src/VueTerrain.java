@@ -33,7 +33,7 @@ public class VueTerrain extends JPanel implements Observer{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
-		if(!this.t.getGagne()){
+		if(!this.t.getGagne() || this.t.modeValeur("configuration") || this.t.modeValeur("inactif")){
 			//On dessine un carre pour chaque lampes,
 			//Gris si eteinte, vert si allumee
 			for(int i=0;i<25;i++){
