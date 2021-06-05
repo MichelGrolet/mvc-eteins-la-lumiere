@@ -10,18 +10,12 @@ public class VueTerrain extends JPanel implements Observer{
 	private Terrain t;
 
 	/**
-	* Indique si la partie est gagnee
-	*/
-	private boolean gagne;
-
-	/**
 	* Constructeur de la VueTerrain
 	* @param t un terrain
 	*/
 	public VueTerrain(Terrain t){
 		this.t=t;
 		this.setPreferredSize(new Dimension(500,500));
-		this.gagne=false;
 	}
 
 	/**
@@ -29,9 +23,6 @@ public class VueTerrain extends JPanel implements Observer{
 	*/
 	@Override
 	public void update(Observable o, Object arg){
-		if(t.modeValeur("jeu")){
-			this.gagne=this.t.cGagne();
-		}
 		repaint();
 	}
 
@@ -42,7 +33,7 @@ public class VueTerrain extends JPanel implements Observer{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
-		if(!this.gagne){
+		if(!this.t.getGagne()){
 			//On dessine un carre pour chaque lampes,
 			//Gris si eteinte, vert si allumee
 			for(int i=0;i<25;i++){

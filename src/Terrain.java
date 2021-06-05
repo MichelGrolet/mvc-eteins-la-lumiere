@@ -23,6 +23,11 @@ public class Terrain extends Observable{
     private String mode;
 
     /**
+	* Indique si la partie est gagnee
+	*/
+	private boolean gagne;
+
+    /**
     * Constructeur du terrain de lampes, eteintes
     */
     public Terrain(){
@@ -204,17 +209,28 @@ public class Terrain extends Observable{
     * Permet de savoir si la partie est gagnee
     * @return un booleen
     */
-    public boolean cGagne(){
+    public void cGagne(){
+        boolean ok=true;
         //On regarde si une lampe est allumee
         for(int i=0;i<this.lampes.length;i++){
             if(this.lampes[i].getAllume()){
-                return false;
+                ok=false;
+                break;
             }
         }
 
-        setChanged();
-        notifyObservers();
-        
-        return true;
+        if(ok){
+            this.gagne=true;
+            setChanged();
+            notifyObservers();
+        }
+    }
+
+    /**
+    * Retourne si le jeu est gagne ou non
+    * @return un booleen
+    */
+    public boolean getGagne(){
+        return this.gagne;
     }
 }
