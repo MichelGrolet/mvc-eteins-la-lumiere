@@ -148,7 +148,7 @@ public class Terrain extends Observable{
     */
     public void reinitialiser(){
         for(int i=0;i<this.lampes.length;i++){
-            if(this.lampes[i].getAllume()){
+            if(!this.lampes[i].getAllume()){
                 this.lampes[i].changerLampe();
             }
         }
@@ -200,9 +200,6 @@ public class Terrain extends Observable{
     */
     public void setMode(String mode){
         this.mode=mode;
-
-        setChanged();
-        notifyObservers();
     }
 
     /**
