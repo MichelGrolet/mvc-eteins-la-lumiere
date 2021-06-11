@@ -23,7 +23,7 @@ public class VueBoutons extends JPanel implements Observer {
 		quitter = new JButton("Quitter");
 
 		//Creation du JLabel
-		mouvements = new JLabel(" Clics : 0");
+		mouvements = new JLabel(" Clics : 0", JLabel.CENTER);
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
 
 		setBouton(configurer, true);
