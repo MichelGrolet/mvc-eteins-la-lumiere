@@ -35,7 +35,7 @@ public class Lampe{
     public Lampe(int x,int y){
         this.x=x;
         this.y=y;
-        this.estAllume=false;
+        this.estAllume=true;
     }
 
     /**
@@ -69,5 +69,9 @@ public class Lampe{
     */
     public boolean getAllume(){
         return this.estAllume;
+    }
+
+    public void setEstAllume(boolean estAllume) {
+        this.estAllume = estAllume;
     }
 }

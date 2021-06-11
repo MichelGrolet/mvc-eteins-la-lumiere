@@ -147,10 +147,8 @@ public class Terrain extends Observable{
     * Permet d'eteindre toutes les lampes
     */
     public void reinitialiser(){
-        for(int i=0;i<this.lampes.length;i++){
-            if(this.lampes[i].getAllume()){
-                this.lampes[i].changerLampe();
-            }
+        for (Lampe l : lampes) {
+            l.setEstAllume(true);
         }
         this.nbClic=0;
         setChanged();
@@ -200,7 +198,7 @@ public class Terrain extends Observable{
     */
     public void setMode(String mode){
         this.mode=mode;
-
+        System.out.println(mode);
         setChanged();
         notifyObservers();
     }
