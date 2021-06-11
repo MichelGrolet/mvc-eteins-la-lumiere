@@ -57,9 +57,9 @@ public class VueTerrain extends JPanel implements Observer{
         	}
 		}
 		else{
-			g.setColor(Color.BLUE);
-			g.drawString("Bravo",100,100);
-			g.drawString("C GAGNE",100,300);
+			g.setColor(Color.BLACK);
+			g.setFont(new Font("Verdana", Font.BOLD, 28));
+			g.drawString("Vous avez gagné !",100,200);
 			t.setGagne();
 			t.setMode("inactif");
 		}
