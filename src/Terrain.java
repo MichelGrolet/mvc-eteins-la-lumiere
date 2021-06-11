@@ -27,6 +27,8 @@ public class Terrain extends Observable{
 	*/
 	private boolean gagne;
 
+	private double compteur;
+
     /**
     * Constructeur du terrain de lampes, eteintes
     */
@@ -155,6 +157,14 @@ public class Terrain extends Observable{
         this.nbClic=0;
         setChanged();
         notifyObservers();
+    }
+
+    public void demarrerCompteur() {
+        this.compteur = System.currentTimeMillis();
+    }
+
+    public double getCompteur() {
+        return System.currentTimeMillis() - compteur;
     }
 
     /**

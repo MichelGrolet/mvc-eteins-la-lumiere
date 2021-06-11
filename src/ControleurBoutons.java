@@ -44,6 +44,7 @@ public class ControleurBoutons {
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("jeu");
                 vueBoutons.setBouton(vueBoutons.getJouer(), false);
+                modele.demarrerCompteur();
             }
         });
         // QUITTER
