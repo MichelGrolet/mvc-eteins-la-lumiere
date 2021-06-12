@@ -10,12 +10,18 @@ public class VueTerrain extends JPanel implements Observer{
 	private Terrain t;
 
 	/**
+	* Decalage pour la construction des formes de lampe
+	*/
+	private final static int decalage=20;
+
+	/**
 	* Constructeur de la VueTerrain
 	* @param t un terrain
 	*/
 	public VueTerrain(Terrain t){
 		this.t=t;
 		this.setPreferredSize(new Dimension(500,500));
+		this.setBackground(Color.BLUE);
 	}
 
 	/**
@@ -36,25 +42,28 @@ public class VueTerrain extends JPanel implements Observer{
 		if(!this.t.getGagne() || this.t.modeValeur("configuration") || this.t.modeValeur("inactif")){
 			//On dessine un carre pour chaque lampes,
 			//Gris si eteinte, vert si allumee
+			
 			for(int i=0;i<25;i++){
 				if(this.t.getLampes()[i].getAllume()){
 					g.setColor(Color.decode("#fff2c7"));
-					g.fillRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
-					Lampe.TAILLE,Lampe.TAILLE);
 				}
 				else{
 					g.setColor(Color.decode("#705600"));
-					g.fillRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
-					Lampe.TAILLE,Lampe.TAILLE);
 				}
+				int[] x={this.t.getLampes()[i].getX()+decalage,this.t.getLampes()[i].getX()+Lampe.TAILLE-decalage,
+						this.t.getLampes()[i].getX()+Lampe.TAILLE,this.t.getLampes()[i].getX()+Lampe.TAILLE,
+						this.t.getLampes()[i].getX()+Lampe.TAILLE-decalage,this.t.getLampes()[i].getX()+decalage,
+						this.t.getLampes()[i].getX(),this.t.getLampes()[i].getX()};
+				int[] y={this.t.getLampes()[i].getY(),this.t.getLampes()[i].getY(),
+						this.t.getLampes()[i].getY()+decalage,this.t.getLampes()[i].getY()-decalage+Lampe.TAILLE,
+						this.t.getLampes()[i].getY()+Lampe.TAILLE,this.t.getLampes()[i].getY()+Lampe.TAILLE,
+						this.t.getLampes()[i].getY()-decalage+Lampe.TAILLE,this.t.getLampes()[i].getY()+decalage};
+				g.fillPolygon(x,y,8);
+				g.fillOval(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),decalage*2,decalage*2);
+				g.fillOval(this.t.getLampes()[i].getX()+Lampe.TAILLE-decalage*2,this.t.getLampes()[i].getY(),decalage*2,decalage*2);
+				g.fillOval(this.t.getLampes()[i].getX()+Lampe.TAILLE-decalage*2,this.t.getLampes()[i].getY()+Lampe.TAILLE-decalage*2,decalage*2,decalage*2);
+				g.fillOval(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY()+Lampe.TAILLE-decalage*2,decalage*2,decalage*2);	
 			}
-
-			//On dessine une grille pour distinguer les lampes
-			g.setColor(Color.BLACK);
-			for(int i=0;i<25;i++){
-				g.drawRect(this.t.getLampes()[i].getX(),this.t.getLampes()[i].getY(),
-				Lampe.TAILLE,Lampe.TAILLE);
-        	}
 		}
 		else{
 			g.setColor(Color.BLACK);

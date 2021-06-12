@@ -36,10 +36,19 @@ public class Terrain extends Observable{
         //Tableau de 25 lampes
         this.lampes=new Lampe[25];
 
+        //Alterne l'allumage des lampes
+        int k=1;
+
         //On cree des lampes, avec des coordonnees d'un tableau 5x5
         for(int i=0;i<5;i++){
             for(int j=0;j<5;j++){
                 this.lampes[i*5+j]=new Lampe(j*Lampe.TAILLE,i*Lampe.TAILLE);
+
+                //On en allume une sur deux
+                if(k%2==0){
+                    this.lampes[i*5+j].changerLampe();
+                }
+                k++;
             }
         }
 
@@ -150,7 +159,7 @@ public class Terrain extends Observable{
     */
     public void reinitialiser(){
         for(int i=0;i<this.lampes.length;i++){
-            if(!this.lampes[i].getAllume()){
+            if(this.lampes[i].getAllume()){
                 this.lampes[i].changerLampe();
             }
         }
@@ -246,5 +255,14 @@ public class Terrain extends Observable{
     */
     public void setGagne(){
         this.gagne=false;
+    }
+
+    /**
+    * Remets les clics zero
+    */
+    public void zeroClic(){
+        this.nbClic=0;
+        setChanged();
+        notifyObservers();
     }
 }

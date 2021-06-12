@@ -24,6 +24,7 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("configuration");
+                modele.zeroClic();
                 vueBoutons.setBouton(vueBoutons.getJouer(), true);
                 vueBoutons.setBouton(vueBoutons.getQuitter(), true);
             }
@@ -34,6 +35,7 @@ public class ControleurBoutons {
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("configuration");
                 modele.aleaLampe();
+                modele.zeroClic();
                 vueBoutons.setBouton(vueBoutons.getJouer(), true);
                 vueBoutons.setBouton(vueBoutons.getQuitter(), true);
             }
@@ -57,6 +59,7 @@ public class ControleurBoutons {
                 if(!modele.modeValeur("inactif")){
                     modele.reinitialiser();
                     modele.setMode("inactif");
+                    modele.zeroClic();
                     vueBoutons.setBouton(vueBoutons.getJouer(), false);
                     vueBoutons.setBouton(vueBoutons.getQuitter(), false);
                 }
