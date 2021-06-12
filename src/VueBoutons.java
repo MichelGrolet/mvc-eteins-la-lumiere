@@ -16,6 +16,11 @@ public class VueBoutons extends JPanel implements Observer {
 	private Terrain t;
 
 	public VueBoutons() {
+		// Les boutons seront dans une grille a une colonne
+		this.setLayout(new GridLayout(5, 1, 50, 50));
+		this.setPreferredSize(new Dimension(200, 500));
+		this.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+
 		// Creation des boutons
 		configurer = new JButton("Configurer");
 		aleatoire = new JButton("Aleatoire");
@@ -23,19 +28,14 @@ public class VueBoutons extends JPanel implements Observer {
 		quitter = new JButton("Quitter");
 
 		//Creation du JLabel
-		mouvements = new JLabel(" Clics : 0", JLabel.CENTER);
+		mouvements = new JLabel("Clics : 0", JLabel.CENTER);
 		mouvements.setFont(new Font("Verdana", Font.PLAIN, 20));
 
 		setBouton(configurer, true);
 		setBouton(aleatoire, true);
-		setBouton(jouer, false);
 		this.add(mouvements);
+		setBouton(jouer, false);
 		setBouton(quitter, false);
-
-		// Les boutons seront dans une grille a une colonne
-		this.setLayout(new GridLayout(5, 1, 50, 50));
-		this.setPreferredSize(new Dimension(200, 500));
-		this.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 	}
 
 	/**

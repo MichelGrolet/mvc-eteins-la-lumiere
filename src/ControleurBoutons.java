@@ -24,8 +24,8 @@ public class ControleurBoutons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("configuration");
-                vueBoutons.setBouton(vueBoutons.getQuitter(), true);
                 vueBoutons.setBouton(vueBoutons.getJouer(), true);
+                vueBoutons.setBouton(vueBoutons.getQuitter(), true);
             }
         });
         // ALEATOIRE
@@ -34,27 +34,32 @@ public class ControleurBoutons {
             public void actionPerformed(ActionEvent e) {
                 modele.setMode("configuration");
                 modele.aleaLampe();
-                vueBoutons.setBouton(vueBoutons.getQuitter(), true);
                 vueBoutons.setBouton(vueBoutons.getJouer(), true);
+                vueBoutons.setBouton(vueBoutons.getQuitter(), true);
             }
         });
         // JOUER
         vueBoutons.getJouer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modele.setMode("jeu");
-                vueBoutons.setBouton(vueBoutons.getJouer(), false);
-                modele.demarrerCompteur();
+                if(!modele.modeValeur("inactif")){
+                    modele.setMode("jeu");
+                    vueBoutons.setBouton(vueBoutons.getJouer(), false);
+                    vueBoutons.setBouton(vueBoutons.getQuitter(), true);
+                    modele.demarrerCompteur();
+                }
             }
         });
         // QUITTER
         vueBoutons.getQuitter().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modele.reinitialiser();
-                modele.setMode("inactif");
-                vueBoutons.setBouton(vueBoutons.getQuitter(), false);
-                vueBoutons.setBouton(vueBoutons.getJouer(), false);
+                if(!modele.modeValeur("inactif")){
+                    modele.reinitialiser();
+                    modele.setMode("inactif");
+                    vueBoutons.setBouton(vueBoutons.getJouer(), false);
+                    vueBoutons.setBouton(vueBoutons.getQuitter(), false);
+                }
             }
         });
     }
