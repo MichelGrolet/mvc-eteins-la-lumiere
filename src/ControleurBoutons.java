@@ -1,24 +1,29 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ControleurBoutons {
+/**
+* Classe qui controle les boutons
+*/
 
+public class ControleurBoutons {
+    /**
+    * Vue de boutons correspondant
+    */
 	private final VueBoutons vueBoutons;
 
-	private final VueTerrain vueTerrain;
-
+    /**
+    * Le terrain de lampes
+    */
 	private final Terrain modele;
 
     /**
      * Ajoute les listeners sur les boutons.
      * @param vueBoutons VueBoutons sur laquelle on ajoute les listeners.
-     * @param vueTerrain
      * @param modele Terrain
      */
-	public ControleurBoutons(VueBoutons vueBoutons, VueTerrain vueTerrain, Terrain modele) {
+	public ControleurBoutons(VueBoutons vueBoutons,Terrain modele) {
 	    this.vueBoutons = vueBoutons;
-        this.vueTerrain = vueTerrain;
-	    this.modele = modele;
+        this.modele=modele;
         // CONFIGURER
         vueBoutons.getConfigurer().addActionListener(new ActionListener() {
             @Override

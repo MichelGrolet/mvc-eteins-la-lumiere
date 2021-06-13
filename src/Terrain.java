@@ -6,6 +6,10 @@ import java.math.*;
 import java.util.*;
 import java.util.Observable;
 
+/**
+* Classe representant un terrain de lampe de 5x5
+*/
+
 public class Terrain extends Observable{
     /**
     * Tableau contenant les lampes
@@ -27,6 +31,9 @@ public class Terrain extends Observable{
 	*/
 	private boolean gagne;
 
+    /**
+    * Compteur de temps
+    */
 	private double compteur;
 
     /**
@@ -70,14 +77,6 @@ public class Terrain extends Observable{
         }
         setChanged();
         notifyObservers();
-    }
-
-    /**
-    * Constructeur prenant un tableau de lampes choisis en parametre
-    * @param lampes un tableau de lampes
-    */
-    public Terrain(Lampe[] lampes){
-        this.lampes=lampes;
     }
 
     /**
@@ -168,10 +167,17 @@ public class Terrain extends Observable{
         notifyObservers();
     }
 
+    /**
+    * Permet de demarrer le compteur de temps
+    */
     public void demarrerCompteur() {
         this.compteur = System.currentTimeMillis();
     }
 
+    /**
+    * Retourne le temps du compteur de temps
+    * @return un double
+    */
     public double getCompteur() {
         return System.currentTimeMillis() - compteur;
     }
@@ -235,6 +241,7 @@ public class Terrain extends Observable{
             }
         }
 
+        //Si c'est gagne, on en informe la vue
         if(ok){
             this.gagne=true;
             setChanged();

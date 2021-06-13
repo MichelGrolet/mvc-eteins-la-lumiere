@@ -6,6 +6,10 @@ import java.math.*;
 import java.util.*;
 import java.util.Observable;
 
+/**
+* Classe representant une lampe
+*/
+
 public class Lampe{
     /**
     * Constante pour la taille d'une lampe
@@ -52,6 +56,7 @@ public class Lampe{
 
     /**
     * Retourne la coordonnee x de la lampe
+    * @return un entier
     */
     public int getX(){
         return this.x;
@@ -59,6 +64,7 @@ public class Lampe{
 
     /**
     * Retourne la coordonnee y de la lampe
+    * @return un entier
     */
     public int getY(){
         return this.y;
@@ -66,11 +72,16 @@ public class Lampe{
 
     /**
     * Retourne l'etat de la lampe
+    * @return un boolean
     */
     public boolean getAllume(){
         return this.estAllume;
     }
 
+    /**
+    * Permet de changer l'etat de la lampe (allume/eteint)
+    * @param estAllume un boolean qui indique si on allume ou non
+    */
     public void setEstAllume(boolean estAllume) {
         this.estAllume = estAllume;
     }
